@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arifuz Zaman Antor - Sr. Software QA Engineer & Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --gemini-deep-blue: #0B071F;
+            --gemini-mid-blue: #1E1A3B;
+            --gemini-light-blue: #89B3F7;
+            --gemini-purple: #C895F8;
+            --gemini-teal: #76E0C2;
+            --gemini-pink: #FF8DCD;
+            --gemini-text: #EAE8FF;
+            --gemini-text-muted: #A8A3D0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--gemini-deep-blue);
+            background-image: radial-gradient(circle at 1% 1%, var(--gemini-mid-blue) 0%, transparent 50%),
+                              radial-gradient(circle at 99% 99%, #2C2A4D 0%, transparent 40%);
+            color: var(--gemini-text);
+        }
+        .glassmorphism {
+            background: rgba(11, 7, 31, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .header-scrolled {
+            background: rgba(11, 7, 31, 0.8);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+        }
+
+        .timeline-container-vertical::before {
+            content: ''; position: absolute; left: 1.25rem; top: 0; bottom: 0;
+            width: 3px; background-color: var(--gemini-mid-blue);
+        }
+        .timeline-item-vertical {
+            position: relative; padding-left: 4rem; padding-bottom: 2rem;
+        }
+        .timeline-item-vertical:last-child { padding-bottom: 0; }
+        .timeline-dot-vertical {
+            position: absolute; left: 0; top: 0; transform: translateX(-48%);
+            width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; background-color: var(--gemini-mid-blue);
+            border: 3px solid var(--gemini-light-blue);
+        }
+
+        .tab-button {
+            cursor: pointer; padding: 0.75rem 1.5rem; border-bottom: 3px solid transparent;
+            transition: all 0.3s; color: var(--gemini-text-muted);
+        }
+        .tab-button:not(.active):hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .tab-button.active {
+            border-image: linear-gradient(to right, var(--gemini-purple), var(--gemini-teal)) 1; color: var(--gemini-text);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .gemini-button {
+            background-image: linear-gradient(to right, var(--gemini-light-blue), var(--gemini-purple));
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(137, 179, 247, 0.2);
+        }
+        .gemini-button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200, 149, 248, 0.3); }
+        .gemini-button:disabled { cursor: not-allowed; opacity: 0.7; }
+        .gemini-button-secondary {
+            background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s ease;
+        }
+        .gemini-button-secondary:hover { background-color: rgba(255, 255, 255, 0.2); transform: translateY(-2px); }
+        .social-icon-button {
+             background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s ease;
+        }
+        .social-icon-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px) scale(1.1);
+            color: var(--gemini-pink);
+        }
+        .loader {
+            width: 20px; height: 20px; border: 2px solid var(--gemini-text); border-bottom-color: transparent;
+            border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .skill-filter-btn {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .skill-filter-btn.active {
+            background-image: linear-gradient(to right, var(--gemini-light-blue), var(--gemini-purple));
+            color: white;
+            box-shadow: 0 4px 15px rgba(137, 179, 247, 0.2);
+        }
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+    </style>
+</head>
+<body class="text-white">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 glassmorphism">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+             <a href="#home" class="flex items-center space-x-2">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 7L12 12L22 7" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 12V22" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="var(--gemini-light-blue)"/>
+                            <stop offset="100%" stop-color="var(--gemini-purple)"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gemini-light-blue to-gemini-purple">AZA</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gemini-text-muted">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                 <div class="relative dropdown">
+                    <button class="flex items-center hover:text-white transition-colors">
+                        <span>Services</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                    </button>
+                    <div class="dropdown-menu absolute hidden mt-2 w-48 bg-gemini-mid-blue rounded-lg shadow-xl border border-white/10 py-1">
+                        <a href="#services" class="block px-4 py-2 text-sm text-gemini-text-muted hover:bg-white/5 hover:text-white">Consultancy</a>
+                        <a href="#projects" class="block px-4 py-2 text-sm text-gemini-text-muted hover:bg-white/5 hover:text-white">Projects</a>
+                    </div>
+                </div>
+                 <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                 <a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center">
+                <button class="md:hidden ml-4 text-gemini-text-muted" id="mobile-menu-button">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gemini-mid-blue/90">
+             <a href="#home" class="block py-3 px-4 text-sm text-gemini-text-muted hover:text-white hover:bg-white/5">Home</a>
+            <a href="#about" class="block py-3 px-4 text-sm text-gemini-text-muted hover:text-white hover:bg-white/5">About</a>
+            <a href="#services" class="block py-3 px-4 text-sm text-gemini-text-muted hover:text-white hover:bg-white/5">Services</a>
+            <a href="#projects" class="block py-3 px-4 text-sm text-gemini-text-muted hover:text-white hover:bg-white/5">Projects</a>
+            <a href="#blogs" class="block py-3 px-4 text-sm text-gemini-text-muted hover:text-white hover:bg-white/5">Blogs</a>
+            <a href="#experience" class="block py-3 px-4 text-sm text-gemini-text-muted hover:text-white hover:bg-white/5">Experience</a>
+            <a href="#testimonials" class="block py-3 px-4 text-sm text-gemini-text-muted hover:text-white hover:bg-white/5">Testimonials</a>
+            <a href="#contact" class="block py-3 px-4 text-sm text-gemini-text-muted hover:text-white hover:bg-white/5">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 pt-24">
+
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+                        Hi, I'm
+                        <span class="block bg-clip-text text-transparent bg-gradient-to-r from-gemini-light-blue to-gemini-purple mt-1 md:mt-2">Arifuz Zaman Antor</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mt-4 text-gemini-text-muted"><span id="typing-text"></span></h2>
+                    <p class="mt-6 text-lg text-gemini-text-muted">
+                        A passionate Sr. Software QA Engineer with 5+ years of experience, building robust automation frameworks, ensuring software quality, and improving system reliability. Based in Dhaka, Bangladesh.
+                    </p>
+                    <div class="mt-8 flex flex-col items-start gap-6">
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#contact" class="gemini-button text-white px-8 py-3 rounded-xl font-semibold text-center">Contact Me</a>
+                             <a href="Sr__Software_Development_Engineer_in_Test.pdf" download="Arifuz_Zaman_Antor_Resume.pdf" class="gemini-button-secondary text-white px-8 py-3 rounded-xl font-semibold flex items-center justify-center">
+                                <i data-lucide="download" class="mr-2 h-5 w-5"></i> Download Resume
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                             <a href="https://github.com/arifuz9" target="_blank" class="social-icon-button p-3 rounded-full" aria-label="GitHub"><i data-lucide="github" class="w-5 h-5"></i></a>
+                             <a href="https://www.linkedin.com/in/arifuz-zaman-antor/" target="_blank" class="social-icon-button p-3 rounded-full" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                             <a href="https://www.youtube.com/@azademy" target="_blank" class="social-icon-button p-3 rounded-full" aria-label="YouTube"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                             <a href="#" target="_blank" class="social-icon-button p-3 rounded-full" aria-label="Medium"><i data-lucide="file-text" class="w-5 h-5"></i></a>
+                             <a href="#" target="_blank" class="social-icon-button p-3 rounded-full" aria-label="Upwork"><i data-lucide="briefcase" class="w-5 h-5"></i></a>
+                             <a href="#" target="_blank" class="social-icon-button p-3 rounded-full" aria-label="Fiverr"><i data-lucide="shopping-bag" class="w-5 h-5"></i></a>
+                             <a href="#" target="_blank" class="social-icon-button p-3 rounded-full" aria-label="Podcast"><i data-lucide="podcast" class="w-5 h-5"></i></a>
+                             <a href="#achievements" class="social-icon-button p-3 rounded-full" aria-label="Certificates"><i data-lucide="award" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center items-center h-full">
+                     <div class="w-80 h-80 sm:w-96 sm:h-96 relative">
+                        <svg viewBox="0 0 400 400" class="w-full h-full">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:var(--gemini-purple);stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:var(--gemini-light-blue);stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="blur"><feGaussianBlur in="SourceGraphic" stdDeviation="10" /></filter>
+                            </defs>
+                            <circle cx="200" cy="200" r="160" fill="url(#grad1)" filter="url(#blur)" opacity="0.3"/>
+                            <circle cx="200" cy="200" r="120" stroke="url(#grad1)" stroke-width="2" fill="none" />
+                            <circle cx="200" cy="200" r="125" stroke="var(--gemini-purple)" stroke-width="1" stroke-dasharray="5 10" fill="none" opacity="0.5"><animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="20s" repeatCount="indefinite" /></circle>
+                            <circle cx="200" cy="200" r="150" stroke="var(--gemini-teal)" stroke-width="1" fill="none" opacity="0.3"><animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="30s" repeatCount="indefinite" /></circle>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="100" font-weight="bold" fill="white">AZA</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24">
+            <h2 class="text-3xl font-bold text-center mb-16">About Me</h2>
+            <div class="bg-white/5 p-8 sm:p-12 rounded-2xl border border-white/10">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                    <div class="lg:col-span-1">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="A modern workspace" class="rounded-lg shadow-xl w-full h-full object-cover">
+                    </div>
+                    <div class="lg:col-span-2">
+                        <h3 class="text-2xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gemini-light-blue to-gemini-teal">A Journey in Software Quality</h3>
+                        <p class="text-gemini-text-muted mb-6">From a Jr. QA Engineer to a Sr. Software QA Engineer, my career has been a continuous journey of learning and growth. I am passionate about leveraging technology to build reliable and scalable software. My experience spans manual and automated testing, performance testing, CI/CD pipelines, and cloud technologies like AWS.</p>
+                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
+                            <div class="bg-white/5 p-4 rounded-lg"><h4 class="text-3xl font-bold text-gemini-purple" id="years-exp">0+</h4><p class="text-sm text-gemini-text-muted">Years Experience</p></div>
+                            <div class="bg-white/5 p-4 rounded-lg"><h4 class="text-3xl font-bold text-gemini-teal" id="projects-done">0+</h4><p class="text-sm text-gemini-text-muted">Projects Done</p></div>
+                            <div class="bg-white/5 p-4 rounded-lg"><h4 class="text-3xl font-bold text-gemini-pink" id="happy-clients">0+</h4><p class="text-sm text-gemini-text-muted">Happy Clients</p></div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-12 border-t border-white/10 pt-8">
+                     <h4 class="text-xl font-semibold text-center mb-6">More Than Just Code</h4>
+                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                         <div class="flex flex-col items-center"><i data-lucide="coffee" class="w-10 h-10 mb-2 text-gemini-light-blue"></i><p class="font-semibold">Coffee Enthusiast</p></div>
+                         <div class="flex flex-col items-center"><i data-lucide="book-open" class="w-10 h-10 mb-2 text-gemini-purple"></i><p class="font-semibold">Lifelong Learner</p></div>
+                         <div class="flex flex-col items-center"><i data-lucide="users" class="w-10 h-10 mb-2 text-gemini-teal"></i><p class="font-semibold">Community Builder</p></div>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Professional Services & Projects Section -->
+        <section id="services" class="py-24">
+            <h2 class="text-3xl font-bold text-center mb-4">Services & Projects</h2>
+            <p class="text-center text-gemini-text-muted mb-12 max-w-3xl mx-auto">Leveraging my expertise to offer specialized services and deliver impactful projects.</p>
+            <div class="max-w-5xl mx-auto bg-white/5 p-2 sm:p-4 rounded-2xl border border-white/10">
+                <nav id="services-tabs" class="flex flex-wrap -mb-px text-center font-semibold gap-x-2 md:gap-x-4">
+                    <div class="tab-button active flex items-center rounded-t-lg" data-target="consultancy-tab"><i data-lucide="briefcase" class="w-5 h-5 mr-2"></i>Consultancy</div>
+                    <div class="tab-button flex items-center rounded-t-lg" data-target="instructor-tab"><i data-lucide="graduation-cap" class="w-5 h-5 mr-2"></i>Instructor</div>
+                    <div class="tab-button flex items-center rounded-t-lg" data-target="projects-tab"><i data-lucide="folder-kanban" class="w-5 h-5 mr-2"></i>Projects</div>
+                </nav>
+                <div class="pt-8 px-2 sm:px-4">
+                    <div id="consultancy-tab" class="tab-content active"></div>
+                    <div id="instructor-tab" class="tab-content"></div>
+                    <div id="projects-tab" class="tab-content"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Blogs Section -->
+        <section id="blogs" class="py-24">
+            <h2 class="text-3xl font-bold text-center mb-4">Blogs & Tutorials</h2>
+            <p class="text-center text-gemini-text-muted mb-12 max-w-3xl mx-auto">Sharing my knowledge on QA, automation, and tech trends.</p>
+            <div class="max-w-5xl mx-auto bg-white/5 p-2 sm:p-4 rounded-2xl border border-white/10">
+                <nav id="blog-tabs" class="flex flex-wrap -mb-px text-center font-semibold gap-x-2 md:gap-x-4">
+                    <div class="tab-button active flex items-center rounded-t-lg" data-target="my-blogs-tab"><i data-lucide="edit" class="w-5 h-5 mr-2"></i>My Posts</div>
+                    <div class="tab-button flex items-center rounded-t-lg" data-target="medium-blogs-tab"><i data-lucide="rss" class="w-5 h-5 mr-2"></i>From Medium</div>
+                    <div class="tab-button flex items-center rounded-t-lg" data-target="tutorials-tab"><i data-lucide="book-marked" class="w-5 h-5 mr-2"></i>Tutorials</div>
+                </nav>
+                <div class="pt-8 px-2 sm:px-4">
+                    <div id="my-blogs-tab" class="tab-content active"></div>
+                    <div id="medium-blogs-tab" class="tab-content"></div>
+                    <div id="tutorials-tab" class="tab-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tools Section -->
+        <section id="ai-tools" class="py-24">
+            <h2 class="text-3xl font-bold text-center mb-4">AI-Powered Tools</h2>
+            <p class="text-center text-gemini-text-muted mb-12 max-w-3xl mx-auto">Explore these interactive tools powered by Gemini, designed to showcase my practical skills and innovative approach to QA.</p>
+            <div class="max-w-5xl mx-auto bg-white/5 p-2 sm:p-4 rounded-2xl border border-white/10">
+                <nav id="ai-tools-tabs" class="flex flex-wrap -mb-px text-center font-semibold gap-x-2 md:gap-x-4">
+                    <div class="tab-button active flex items-center rounded-t-lg" data-target="cover-letter-tool"><i data-lucide="file-text" class="w-5 h-5 mr-2"></i>Cover Letter</div>
+                    <div class="tab-button flex items-center rounded-t-lg" data-target="interview-coach-tool"><i data-lucide="mic" class="w-5 h-5 mr-2"></i>Interview Coach</div>
+                    <div class="tab-button flex items-center rounded-t-lg" data-target="test-case-tool"><i data-lucide="edit-3" class="w-5 h-5 mr-2"></i>Test Cases</div>
+                </nav>
+                <div class="pt-8 px-2 sm:px-4">
+                     <div id="cover-letter-tool" class="tab-content active"></div>
+                     <div id="interview-coach-tool" class="tab-content"></div>
+                     <div id="test-case-tool" class="tab-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24">
+            <h2 class="text-3xl font-bold text-center mb-16">Work Experience</h2>
+            <div class="relative mx-auto max-w-5xl">
+                <div class="relative timeline-container-vertical">
+                    <!-- Experience items will be injected here -->
+                </div>
+                 <div id="experience-toggle" class="text-center mt-8">
+                    <!-- Show more/less button will be injected here -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="py-24">
+             <h2 class="text-3xl font-bold text-center mb-16">Education</h2>
+             <div id="education-container" class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Education items will be injected here by JS -->
+             </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24">
+            <h2 class="text-3xl font-bold text-center mb-16">Skills & Technologies</h2>
+            <div id="skills-container" class="max-w-5xl mx-auto">
+                 <!-- Skills will be injected here by JS -->
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24">
+            <h2 class="text-3xl font-bold text-center mb-16">What Clients Say</h2>
+            <div id="testimonials-container" class="max-w-5xl mx-auto">
+                <!-- Testimonials will be injected here -->
+            </div>
+        </section>
+        
+        <!-- Project Catalog Section -->
+        <section id="projects" class="py-24">
+             <h2 class="text-3xl font-bold text-center mb-16">Project Catalog</h2>
+            <div id="project-catalog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be injected here -->
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-24">
+            <div class="text-center"><h2 class="text-3xl font-bold">Get In Touch</h2>
+            <p class="text-lg text-gemini-text-muted mt-4 mb-12 max-w-2xl mx-auto">Have a project, a question, or just want to connect? Send me a message!</p></div>
+            <form id="contact-form" class="max-w-2xl mx-auto bg-white/5 p-8 rounded-2xl border border-white/10 space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gemini-text-muted mb-2">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full p-3 border-0 rounded-lg bg-gemini-mid-blue text-white focus:outline-none focus:ring-2 focus:ring-gemini-light-blue">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gemini-text-muted mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full p-3 border-0 rounded-lg bg-gemini-mid-blue text-white focus:outline-none focus:ring-2 focus:ring-gemini-light-blue">
+                    </div>
+                </div>
+                <div>
+                    <label for="subject" class="block text-sm font-medium text-gemini-text-muted mb-2">Subject</label>
+                    <input type="text" id="subject" name="subject" required class="w-full p-3 border-0 rounded-lg bg-gemini-mid-blue text-white focus:outline-none focus:ring-2 focus:ring-gemini-light-blue">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gemini-text-muted mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required class="w-full p-3 border-0 rounded-lg bg-gemini-mid-blue text-white focus:outline-none focus:ring-2 focus:ring-gemini-light-blue"></textarea>
+                </div>
+                <div>
+                    <button type="submit" id="contact-submit-btn" class="w-full gemini-button text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center text-lg">
+                        <span class="btn-text">Send Message</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-gemini-mid-blue/50 border-t border-white/10 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                 <h4 class="font-bold text-white text-xl mb-4">Join My Newsletter</h4>
+                 <p class="text-gemini-text-muted text-sm mb-4 max-w-md mx-auto">Get the latest QA tips, tutorials, and insights directly in your inbox.</p>
+                 <form id="newsletter-form" class="flex max-w-md mx-auto">
+                     <input type="email" id="newsletter-email" placeholder="Your email" required class="w-full p-3 border-0 rounded-l-lg bg-gemini-deep-blue text-white focus:outline-none focus:ring-2 focus:ring-gemini-purple">
+                     <button type="submit" class="bg-gemini-purple text-white px-5 py-3 rounded-r-lg font-semibold hover:opacity-90 transition-opacity" aria-label="Subscribe to newsletter">
+                         <i data-lucide="send"></i>
+                     </button>
+                 </form>
+                 <p id="newsletter-feedback" class="text-sm mt-3 text-gemini-teal h-5"></p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center md:text-left">
+                <!-- Column 1: About -->
+                <div class="md:col-span-2 lg:col-span-1">
+                    <a href="#home" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gemini-light-blue to-gemini-purple mb-4 inline-block">AZA</a>
+                    <p class="text-gemini-text-muted text-sm">A dedicated QA professional transforming software quality through automation, consultancy, and education.</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#about" class="text-gemini-text-muted hover:text-white transition-colors">About</a></li>
+                        <li><a href="#services" class="text-gemini-text-muted hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#projects" class="text-gemini-text-muted hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#blogs" class="text-gemini-text-muted hover:text-white transition-colors">Blogs</a></li>
+                        <li><a href="#contact" class="text-gemini-text-muted hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Connect -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Connect</h4>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="https://www.linkedin.com/in/arifuz-zaman-antor/" target="_blank" class="text-gemini-text-muted hover:text-gemini-light-blue transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                        <a href="https://github.com/arifuz9" target="_blank" class="text-gemini-text-muted hover:text-white transition-colors" aria-label="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
+                        <a href="https://www.youtube.com/@azademy" target="_blank" class="text-gemini-text-muted hover:text-gemini-pink transition-colors" aria-label="YouTube"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a href="https://twitter.com/your-twitter" target="_blank" class="text-gemini-text-muted hover:text-gemini-light-blue transition-colors" aria-label="Twitter"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                    </div>
+                     <a href="mailto:arifuzantor@gmail.com" class="text-sm mt-4 inline-block text-gemini-text-muted hover:text-white transition-colors">arifuzantor@gmail.com</a>
+                </div>
+                 <!-- Column 4: Resume -->
+                 <div>
+                    <h4 class="font-bold text-white mb-4">Resume</h4>
+                    <p class="text-gemini-text-muted text-sm mb-4">Get a copy of my professional resume.</p>
+                     <a href="Sr__Software_Development_Engineer_in_Test.pdf" download="Arifuz_Zaman_Antor_Resume.pdf" class="gemini-button-secondary text-white px-6 py-2 rounded-xl font-semibold flex items-center justify-center text-sm w-full md:w-auto">
+                        <i data-lucide="download" class="mr-2 h-4 w-4"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center">
+                <p class="text-sm text-gemini-text-muted">&copy; 2025 Arifuz Zaman Antor. All Rights Reserved.</p>
+                <a href="#home" class="mt-4 sm:mt-0 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors" aria-label="Back to top">
+                    <i data-lucide="arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="contact-modal" class="fixed inset-0 z-[1001] items-center justify-center hidden">
+        <div class="fixed inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div class="relative bg-gemini-mid-blue rounded-2xl shadow-xl w-11/12 md:w-1/3 max-h-[90vh] flex flex-col border border-white/10 text-center p-8">
+             <div class="mx-auto mb-4">
+                 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDB2M2s1ZTV6aG52c3k1bGJodXhscHhzb3hpdWhsY3hkaTNpYTNrayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h4b2S7e4A2r4444s1s/giphy.gif" alt="Message sent" class="w-24 h-24 rounded-full">
+             </div>
+             <h3 class="text-2xl font-bold mb-2">Message Sent!</h3>
+             <p class="text-gemini-text-muted">Thank you for reaching out. I'll get back to you shortly.</p>
+             <button id="close-contact-modal-btn" class="mt-6 w-full gemini-button-secondary text-white px-6 py-2 rounded-full font-semibold">Close</button>
+        </div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+
+        // --- Data ---
+        const resumeData = {
+            name: "Arifuz Zaman Antor",
+            title: "Sr. Software QA Engineer",
+            contactEmail: "arifuzantor@gmail.com",
+            experience: [
+                { title: "Sr. Software QA Engineer I", company: "Kinetik Care", date: "Sept 2023 - Present", logo: "KC", achievements: ["Led API and UI automation using Playwright in TypeScript.", "Engineered and executed manual testing strategies using QASE and Jira.", "Worked with AWS cloud services and implemented web security testing."], technologies: ["Playwright", "TypeScript", "AWS", "Jira", "Postman", "QASE"] },
+                { title: "Sr. Automation & Reliability Engineer", company: "Mastercard", date: "Feb 2022 - Aug 2023", logo: "M", achievements: ["Implemented performance and chaos engineering frameworks.", "Developed and integrated CI/CD pipelines for automated testing.", "Improved incident detection and response time by 40% with Grafana dashboards."], technologies: ["JMeter", "Terraform", "Chaos Eng.", "Grafana", "Jenkins", "CI/CD"] },
+                { title: "Augmented Sr. SQA Engineer", company: "Intellex (via TCS)", date: "Jan 2021 - Jan 2022", logo: "I", achievements: ["Led development of a full regression suite for a Magento platform.", "Covered UI, API integrations, and 2FA.", "Reduced manual testing effort by 60% through strategic automation."], technologies: ["Selenium", "Magento", "API Testing", "ReactJS", ".NET Core", "Azure"] },
+                { title: "Software QA Engineer", company: "REVE Systems", date: "Dec 2020 - Aug 2023", logo: "R", achievements: ["Enhanced mobile app testing speed by 40%.", "Performed security testing using OWASP ZAP, Burp Suite, and Kali Linux.", "Ensured high product quality for CBMS through comprehensive testing."], technologies: ["JMeter", "Selenium", "OWASP ZAP", "Burp Suite", "Mobile Testing"] },
+            ],
+             education: [
+                { degree: "Bachelor of Science in Computer Science & Engineering", university: "Shahjalal University of Science and Technology", date: "Feb 2017 - Feb 2022", location: "Sylhet, Bangladesh" },
+                { degree: "Higher Secondary Certificate", university: "Shahid Syed Nazrul Islam College, Mymensingh", date: "July 2014 - July 2016", location: "Mymensingh, Bangladesh" },
+            ],
+            skills: {
+                "Automation & Frameworks": ["Selenium", "Playwright", "Cypress", "JMeter", "Locust", "Postman"],
+                "Languages": ["TypeScript", "JavaScript", "SQL", ".NET Core"],
+                "CI/CD & DevOps": ["Jenkins", "GitLab CI", "AWS CodePipeline", "Terraform", "Docker"],
+                "Cloud Platforms": ["AWS", "Azure"],
+                "Project Management": ["Jira", "Slack", "Notion", "TestRail"],
+                "Security & Specialized Testing": ["OWASP ZAP", "Burp Suite", "Kali Linux", "Chaos Engineering"],
+                "Teaching & Mentoring": ["Corporate Training", "Workshop Facilitation", "Curriculum Development", "Public Speaking"],
+                "Product Management": ["Agile Methodologies", "Scrum", "Kanban", "Roadmap Planning", "User Story Creation"]
+            },
+             blogs: [
+                { title: "Mastering API Automation with Playwright", date: "June 15, 2025", summary: "A deep dive into using Playwright for robust API testing, from basic requests to complex scenarios.", tags: ["Playwright", "API Testing", "Automation"], link: "#" },
+                { title: "Effective CI/CD Pipelines for QA", date: "May 28, 2025", summary: "Learn how to integrate automated testing seamlessly into your CI/CD workflow with Jenkins and GitLab.", tags: ["CI/CD", "Jenkins", "Strategy"], link: "#" },
+                { title: "An Introduction to Chaos Engineering", date: "May 05, 2025", summary: "Discover how to proactively find system weaknesses by intentionally introducing failures.", tags: ["Chaos Eng.", "Reliability", "Strategy"], link: "#" },
+                 { title: "The Shift-Left Approach to Quality", date: "April 20, 2025", summary: "Exploring the benefits and practical steps of incorporating quality assurance earlier in the development lifecycle.", tags: ["Strategy", "Agile"], link: "#" }
+            ],
+             tutorials: [
+                { title: "Setting Up Your First Playwright Project", date: "June 10, 2025", summary: "A step-by-step guide for beginners to get started with Playwright for end-to-end testing.", tags: ["Playwright", "Beginner", "Tutorial"], link: "#" },
+                { title: "Automating API Tests with Postman Collections", date: "May 22, 2025", summary: "Learn how to use Postman's collection runner and Newman to automate your API testing workflows.", tags: ["Postman", "API Testing", "Automation"], link: "#" },
+            ],
+            testimonials: [
+                { project: "Senior QA Tester (Manual & Automated)", quote: "He was awesome! Great worker and knowledgeable!", client: "Upwork Client" },
+                { project: "Test Complete Assessment", quote: "Arifuz did a great job evaluating our Test Complete implementation and gave a very thorough and detailed summary. I hope to work with Arifuz again.", client: "Upwork Client" },
+                { project: "Manual testing of the website", quote: "This freelancer is high skilled in manual testing of the website. The task is delivered on time. Good in English. Recommend to hire.", client: "Upwork Client" },
+                { project: "60 minute consultation", quote: "Very professional and knowledgeable. He answered all my questions.", client: "Upwork Client" },
+                { project: "GitLocker web app bug test", quote: "Job completed successfully. Great job!", client: "Upwork Client" },
+            ],
+            services: {
+                consultancy: [
+                    { title: "Top Rated Upwork Freelancer", desc: "Delivering top-tier QA and automation solutions with a proven track record of success on the world's largest freelance platform.", icon: "star" },
+                    { title: "Test Automation Strategy", desc: "Designing and implementing scalable, end-to-end automation frameworks tailored to your product.", icon: "binary" },
+                    { title: "CI/CD Pipeline Optimization", desc: "Integrating automated testing into your CI/CD pipeline to accelerate feedback and improve release quality.", icon: "git-branch-plus" },
+                    { title: "Performance & Reliability Audits", desc: "Conducting thorough performance, load, and chaos testing to identify bottlenecks and enhance system robustness.", icon: "gauge-circle" },
+                ],
+                instructor: [
+                    { title: "Corporate QA Training", desc: "Providing customized on-site or remote training sessions to upskill your engineering teams in modern QA practices.", icon: "building" },
+                    { title: "Selenium & Playwright Masterclass", desc: "Comprehensive training on modern web automation tools, from fundamentals to advanced techniques.", icon: "chrome" },
+                    { title: "API Testing with Postman", desc: "Hands-on workshops focused on mastering API test automation for RESTful and GraphQL services.", icon: "file-code-2" },
+                    { title: "Introduction to SRE & Observability", desc: "Courses covering the principles of Site Reliability Engineering and implementing monitoring with tools like Prometheus & Grafana.", icon: "area-chart" },
+                ],
+                projects: [
+                    { title: "E-Commerce Test Automation Suite", company: "Intellex", desc: "Led the development of a full regression suite for a Magento-based e-commerce platform using Selenium. Covered UI, API integrations (QuickBooks, ShipBob), and 2FA with Twilio, reducing manual testing effort by 60%.", tags: ["Selenium", "Magento", "API Testing"] },
+                    { title: "Fintech Reliability Framework", company: "Mastercard", desc: "Implemented a performance and chaos engineering framework using JMeter and Locust for a high-traffic financial service. Established observability dashboards in Grafana, improving incident detection and response time by 40%.", tags: ["JMeter", "Chaos Eng.", "Grafana"] },
+                    { title: "Healthcare Logistics Platform Testing", company: "Kinetik Care", desc: " spearheaded API and UI automation using Playwright (TypeScript) for a complex trip scheduling system involving AWS services (SQS, Lambda). Ensured data integrity and system reliability for critical healthcare logistics.", tags: ["Playwright", "TypeScript", "AWS"] },
+                ]
+            }
+        };
+        const fullResumeTextForAI = JSON.stringify(resumeData, null, 2);
+
+        // --- UI Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const typingText = document.getElementById('typing-text');
+            const roles = ['Sr. Software QA Engineer', 'Automation Expert', 'Top Rated Freelancer', 'Consultant & Instructor'];
+            let roleIndex = 0, charIndex = 0, isDeleting = false;
+            function type() {
+                const currentRole = roles[roleIndex];
+                const typeSpeed = isDeleting ? 100 : 200;
+                typingText.textContent = currentRole.substring(0, charIndex);
+                if (!isDeleting && charIndex < currentRole.length) charIndex++;
+                else if (isDeleting && charIndex > 0) charIndex--;
+                else { isDeleting = !isDeleting; if(!isDeleting) roleIndex = (roleIndex + 1) % roles.length; }
+                setTimeout(type, charIndex === currentRole.length ? 2000 : typeSpeed);
+            }
+            type();
+            
+            populateExperience();
+            populateEducation();
+            populateSkills();
+            populateBlogs();
+            populateServices();
+            populateAITools();
+            populateTestimonials();
+            populateProjectCatalog();
+            setupAnimatedCounters();
+        });
+        
+        // --- Tab Logic ---
+        function setupTabs(tabsContainerId) {
+            const tabsContainer = document.getElementById(tabsContainerId);
+            if (!tabsContainer) return;
+            const tabs = tabsContainer.querySelectorAll('.tab-button');
+            const contentsContainer = tabsContainer.nextElementSibling;
+            if (!contentsContainer) return;
+            const contents = contentsContainer.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(item => item.classList.remove('active'));
+                    contents.forEach(content => content.classList.remove('active'));
+                    tab.classList.add('active');
+                    const target = document.getElementById(tab.dataset.target);
+                    if(target) target.classList.add('active');
+                });
+            });
+        }
+        setupTabs('services-tabs');
+        setupTabs('ai-tools-tabs');
+        setupTabs('blog-tabs');
+
+        // --- Content Population ---
+        function populateExperience() {
+            const container = document.querySelector('.timeline-container-vertical');
+            if(!container) return;
+            container.innerHTML = resumeData.experience.map((job, index) => {
+                const logoUrl = `https://placehold.co/60x60/1E1A3B/EAE8FF?text=${job.logo}`;
+                return `
+                <div class="timeline-item-vertical ${index >= 2 ? 'hidden' : ''}">
+                    <div class="timeline-dot-vertical">
+                        <img src="${logoUrl}" alt="${job.company} logo" class="w-10 h-10 rounded-full">
+                    </div>
+                    <div class="p-6 bg-white/5 border border-white/10 rounded-xl shadow-lg hover:border-gemini-purple/50 transition-all duration-300">
+                         <p class="text-sm font-semibold text-gemini-light-blue mb-1">${job.date}</p>
+                         <h3 class="text-xl font-bold text-white">${job.title}</h3>
+                         <p class="text-md font-semibold text-gemini-text-muted mb-4">${job.company}</p>
+
+                        <div class="space-y-3">
+                             <div>
+                                <h4 class="font-semibold text-sm text-gemini-text-muted mb-2 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2 text-gemini-teal"></i>Key Achievements</h4>
+                                <ul class="list-disc list-inside text-sm text-gemini-text-muted space-y-1 ml-6">
+                                    ${job.achievements.map(d => `<li>${d}</li>`).join('')}
+                                </ul>
+                            </div>
+                             <div>
+                                <h4 class="font-semibold text-sm text-gemini-text-muted mb-2 flex items-center"><i data-lucide="wrench" class="w-4 h-4 mr-2 text-gemini-purple"></i>Key Technologies</h4>
+                                <div class="flex flex-wrap gap-2 ml-6">
+                                    ${job.technologies.map(t => `<span class="text-xs font-medium bg-gemini-teal/10 text-gemini-teal px-2 py-1 rounded-full">${t}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `
+            }).join('');
+            
+            const toggleContainer = document.getElementById('experience-toggle');
+            if (toggleContainer && resumeData.experience.length > 2) {
+                toggleContainer.innerHTML = `<button id="exp-toggle-btn" class="gemini-button-secondary text-white px-6 py-2 rounded-xl font-semibold text-sm">Show More</button>`;
+                addExperienceToggleListener();
+            }
+
+            lucide.createIcons();
+        }
+        
+        function populateEducation() {
+            const container = document.getElementById('education-container');
+             if(!container) return;
+            container.innerHTML = resumeData.education.map(edu => `
+                <div class="flex items-center gap-6 bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg">
+                    <div class="bg-gemini-light-blue/10 text-gemini-light-blue p-4 rounded-full">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.7.7 3.2 1.9 4.2C8.6 22 9.9 22.8 12 23s3.4-.8 4.1-1.8c1.2-1 1.9-2.5 1.9-4.2v-5"/></svg>
+                    </div>
+                    <div>
+                         <h3 class="text-xl font-bold text-white">${edu.degree}</h3>
+                         <p class="font-semibold mt-1 text-gemini-text-muted">${edu.university}</p>
+                         <p class="text-sm text-gemini-text-muted mt-1">${edu.date} | ${edu.location}</p>
+                    </div>
+                 </div>
+            `).join('');
+        }
+
+        function populateSkills() {
+             const container = document.getElementById('skills-container');
+             if(!container) return;
+             let filterButtons = `<div id="skill-filters" class="flex flex-wrap gap-3 justify-center mb-8">
+                <button class="skill-filter-btn active px-4 py-2 rounded-full font-semibold text-sm" data-filter="all">All</button>`;
+             
+             let skillsContent = `<div id="skill-tags" class="flex flex-wrap gap-3 justify-center">`;
+
+             for (const category in resumeData.skills) {
+                 filterButtons += `<button class="skill-filter-btn px-4 py-2 rounded-full font-semibold text-sm" data-filter="${category.replace(/[\s&]/g, '-')}">${category}</button>`;
+                 resumeData.skills[category].forEach(skill => {
+                     skillsContent += `<span class="skill-tag bg-white/10 text-gemini-text-muted text-sm font-medium px-4 py-2 rounded-full hover:bg-white/20 hover:text-white transition-colors cursor-default" data-category="${category.replace(/[\s&]/g, '-')}">${skill}</span>`;
+                 });
+             }
+             
+             filterButtons += `</div>`;
+             skillsContent += `</div>`;
+             container.innerHTML = filterButtons + skillsContent;
+
+             addSkillFilterListeners();
+        }
+
+        function populateBlogs() {
+            const myBlogsContainer = document.getElementById('my-blogs-tab');
+            if(myBlogsContainer) {
+                myBlogsContainer.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${resumeData.blogs.map(blog => `
+                    <a href="${blog.link}" class="block bg-white/5 p-6 rounded-xl border border-white/10 hover:border-gemini-teal/50 transition-all duration-300">
+                        <h3 class="text-xl font-bold mb-2 text-gemini-teal">${blog.title}</h3>
+                        <p class="text-sm text-gemini-text-muted mb-4">${blog.date}</p>
+                        <p class="text-sm text-gemini-text-muted mb-4">${blog.summary}</p>
+                        <div class="flex flex-wrap gap-2">
+                            ${blog.tags.map(tag => `<span class="text-xs font-medium bg-gemini-purple/10 text-gemini-purple px-2 py-1 rounded-full">${tag}</span>`).join('')}
+                        </div>
+                    </a>
+                `).join('')}</div>`;
+            }
+            
+            const mediumBlogsContainer = document.getElementById('medium-blogs-tab');
+            if(mediumBlogsContainer) {
+                mediumBlogsContainer.innerHTML = `<div class="text-center text-gemini-text-muted">Medium articles will be loaded here.</div>`;
+            }
+
+            const tutorialsContainer = document.getElementById('tutorials-tab');
+             if(tutorialsContainer){
+                tutorialsContainer.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${resumeData.tutorials.map(tut => `
+                    <a href="${tut.link}" class="block bg-white/5 p-6 rounded-xl border border-white/10 hover:border-gemini-teal/50 transition-all duration-300">
+                        <h3 class="text-xl font-bold mb-2 text-gemini-teal">${tut.title}</h3>
+                        <p class="text-sm text-gemini-text-muted mb-4">${tut.date}</p>
+                        <p class="text-sm text-gemini-text-muted mb-4">${tut.summary}</p>
+                        <div class="flex flex-wrap gap-2">
+                            ${tut.tags.map(tag => `<span class="text-xs font-medium bg-gemini-light-blue/10 text-gemini-light-blue px-2 py-1 rounded-full">${tag}</span>`).join('')}
+                        </div>
+                    </a>
+                `).join('')}</div>`;
+             }
+        }
+
+        function populateServices() {
+             const consultancyContainer = document.getElementById('consultancy-tab');
+             if(consultancyContainer) {
+                consultancyContainer.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">${resumeData.services.consultancy.map(s => `
+                    <div class="bg-white/5 p-6 rounded-lg border border-white/10 hover:border-gemini-purple/50 hover:bg-white/10 transition-all">
+                        <i data-lucide="${s.icon}" class="w-8 h-8 mb-4 text-gemini-purple"></i>
+                        <h4 class="font-bold text-lg mb-2">${s.title}</h4><p class="text-sm text-gemini-text-muted">${s.desc}</p>
+                    </div>`).join('')}</div>`;
+             }
+
+            const instructorContainer = document.getElementById('instructor-tab');
+            if(instructorContainer){
+                instructorContainer.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">${resumeData.services.instructor.map(s => `
+                    <div class="bg-white/5 p-6 rounded-lg border border-white/10 hover:border-gemini-teal/50 hover:bg-white/10 transition-all">
+                        <i data-lucide="${s.icon}" class="w-8 h-8 mb-4 text-gemini-teal"></i>
+                        <h4 class="font-bold text-lg mb-2">${s.title}</h4><p class="text-sm text-gemini-text-muted">${s.desc}</p>
+                    </div>`).join('')}</div>`;
+            }
+
+            const projectsContainer = document.getElementById('projects-tab');
+            if(projectsContainer){
+                projectsContainer.innerHTML = `<div class="space-y-8">${resumeData.services.projects.map(p => `
+                    <div class="bg-white/5 p-6 rounded-lg border border-white/10">
+                        <h4 class="font-bold text-xl mb-1 text-gemini-light-blue">${p.title}</h4>
+                        <p class="text-sm font-semibold text-gemini-text-muted mb-3">${p.company}</p>
+                        <p class="text-sm text-gemini-text-muted mb-4">${p.desc}</p>
+                        <div class="flex flex-wrap gap-2">${p.tags.map(t => `<span class="text-xs font-medium bg-gemini-purple/10 text-gemini-purple px-2 py-1 rounded-full">${t}</span>`).join('')}</div>
+                    </div>`).join('')}</div>`;
+            }
+             lucide.createIcons();
+        }
+
+        function populateAITools() {
+            const loadingIndicator = `<div class="flex justify-center items-center h-full p-8"><div class="loader"></div></div>`;
+            const coverLetterTool = document.getElementById('cover-letter-tool');
+            if(coverLetterTool) {
+                coverLetterTool.innerHTML = `<p class="text-center text-gemini-text-muted mb-6">Recruiters, paste a job description below to get a tailored cover letter.</p>
+                    <textarea id="job-description" rows="6" class="w-full p-3 border border-white/20 rounded-lg bg-gemini-mid-blue text-gemini-text focus:outline-none focus:ring-2 focus:ring-gemini-light-blue" placeholder="Paste the job description here..."></textarea>
+                    <button id="generate-letter-btn" class="mt-4 w-full gemini-button text-white px-6 py-3 rounded-full font-semibold flex items-center justify-center text-lg"><i data-lucide="sparkles" class="mr-2 h-5 w-5"></i><span class="btn-text">Generate</span></button>
+                    <div id="letter-output-container" class="mt-6 hidden"><div id="letter-output" class="p-4 border border-white/10 rounded-lg bg-gemini-deep-blue whitespace-pre-wrap h-80 overflow-y-auto">${loadingIndicator}</div><button id="copy-letter-btn" class="mt-4 gemini-button-secondary text-white px-4 py-2 rounded-full font-semibold flex items-center"><i data-lucide="copy" class="mr-2 h-5 w-5"></i> Copy</button></div>`;
+            }
+            
+            const interviewCoachTool = document.getElementById('interview-coach-tool');
+            if(interviewCoachTool) {
+               interviewCoachTool.innerHTML = `<p class="text-center text-gemini-text-muted mb-6">Practice your interview skills! Get a question and receive AI-powered feedback on your answer.</p>
+                    <button id="get-interview-question-btn" class="mb-4 w-full gemini-button text-white px-6 py-3 rounded-full font-semibold flex items-center justify-center text-lg"><i data-lucide="sparkles" class="mr-2 h-5 w-5"></i><span class="btn-text">Get Interview Question</span></button>
+                    <div id="interview-qna-container" class="hidden"><div class="mb-4 p-4 border border-white/10 rounded-lg bg-white/5"><h4 class="font-bold mb-2 text-gemini-light-blue">Question:</h4><p id="interview-question-output" class="text-gemini-text-muted"></p></div><textarea id="interview-answer" rows="6" class="w-full p-3 border border-white/20 rounded-lg bg-gemini-mid-blue text-gemini-text focus:outline-none focus:ring-2 focus:ring-gemini-light-blue" placeholder="Type your answer here..."></textarea><button id="get-feedback-btn" class="mt-4 w-full gemini-button text-white px-6 py-3 rounded-full font-semibold flex items-center justify-center text-lg bg-gradient-to-r from-gemini-teal to-gemini-light-blue"><i data-lucide="message-circle-question" class="mr-2 h-5 w-5"></i><span class="btn-text">Get Feedback</span></button><div id="feedback-output-container" class="mt-6 hidden"><h4 class="text-lg font-bold mb-2 text-gemini-teal">AI Feedback:</h4><div id="feedback-output" class="p-4 border-2 border-dashed border-gemini-teal/50 rounded-lg bg-gemini-teal/10 whitespace-pre-wrap">${loadingIndicator}</div></div></div>`;
+            }
+
+            const testCaseTool = document.getElementById('test-case-tool');
+            if(testCaseTool) {
+                testCaseTool.innerHTML = `<p class="text-center text-gemini-text-muted mb-6">Describe a feature, and the AI will generate a set of test cases for you.</p>
+                    <textarea id="feature-description" rows="6" class="w-full p-3 border border-white/20 rounded-lg bg-gemini-mid-blue text-gemini-text focus:outline-none focus:ring-2 focus:ring-gemini-light-blue" placeholder="e.g., A user login page with email and password fields..."></textarea>
+                    <button id="generate-cases-btn" class="mt-4 w-full gemini-button text-white px-6 py-3 rounded-full font-semibold flex items-center justify-center text-lg"><i data-lucide="sparkles" class="mr-2 h-5 w-5"></i><span class="btn-text">Generate Test Cases</span></button>
+                    <div id="test-case-output-container" class="mt-6 hidden"><div id="test-case-output" class="p-4 border border-white/10 rounded-lg bg-gemini-deep-blue whitespace-pre-wrap h-96 overflow-y-auto">${loadingIndicator}</div></div>`;
+            }
+            
+            lucide.createIcons();
+            addAIToolListeners();
+        }
+
+        function populateTestimonials() {
+            const container = document.getElementById('testimonials-container');
+            if(!container) return;
+            container.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${resumeData.testimonials.map(t => `
+                <div class="bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ${Array(5).fill(0).map((_, i) => `<i data-lucide="star" class="w-5 h-5 fill-current"></i>`).join('')}
+                        </div>
+                    </div>
+                    <p class="text-gemini-text-muted italic mb-4">"${t.quote}"</p>
+                    <div class="mt-auto pt-4 border-t border-white/10">
+                         <p class="font-bold text-white">${t.client}</p>
+                         <p class="text-sm text-gemini-text-muted">${t.project}</p>
+                    </div>
+                </div>
+            `).join('')}</div>`;
+             lucide.createIcons();
+        }
+
+        function populateProjectCatalog() {
+            const container = document.getElementById('project-catalog-container');
+            if (!container) return;
+            const projects = [
+                { title: "E-Commerce Automation", category: "UI Automation", img: "https://placehold.co/600x400/1E1A3B/C895F8?text=E-Commerce+UI" },
+                { title: "Financial API Testing", category: "API Testing", img: "https://placehold.co/600x400/1E1A3B/76E0C2?text=Fintech+API" },
+                { title: "Healthcare Mobile Testing", category: "Mobile Testing", img: "https://placehold.co/600x400/1E1A3B/FF8DCD?text=Healthcare+App" },
+                { title: "Load Testing for SaaS", category: "Performance Testing", img: "https://placehold.co/600x400/1E1A3B/89B3F7?text=SaaS+Performance" },
+                { title: "CI/CD Pipeline for Startups", category: "CI/CD", img: "https://placehold.co/600x400/1E1A3B/FBBF24?text=Startup+CI/CD" },
+                { title: "OWASP Security Audit", category: "Security Testing", img: "https://placehold.co/600x400/1E1A3B/F87171?text=Security+Audit" }
+            ];
+
+            container.innerHTML = projects.map(p => `
+                <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden group">
+                    <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    <div class="p-6">
+                        <p class="text-sm font-semibold text-gemini-purple">${p.category}</p>
+                        <h4 class="text-xl font-bold mt-1 mb-4">${p.title}</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="gemini-button text-white text-sm px-4 py-2 rounded-lg font-semibold">Live Demo</a>
+                            <a href="#" class="gemini-button-secondary text-white text-sm px-4 py-2 rounded-lg font-semibold">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+
+        // --- Event Listeners ---
+        document.getElementById('mobile-menu-button').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+        
+        const contactForm = document.getElementById('contact-form');
+        const contactModal = document.getElementById('contact-modal');
+        const submitBtn = document.getElementById('contact-submit-btn');
+
+        if(contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const originalBtnText = submitBtn.querySelector('.btn-text').innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.querySelector('.btn-text').innerHTML = `<div class="loader"></div>`;
+                
+                setTimeout(() => {
+                    if(contactModal) {
+                        contactModal.classList.remove('hidden');
+                        contactModal.classList.add('flex');
+                    }
+                    lucide.createIcons();
+                    
+                    submitBtn.disabled = false;
+                    submitBtn.querySelector('.btn-text').innerHTML = originalBtnText;
+                    contactForm.reset();
+
+                }, 2000);
+            });
+        }
+        if(contactModal) {
+            document.getElementById('close-contact-modal-btn').addEventListener('click', () => contactModal.classList.add('hidden'));
+        }
+
+        const newsletterForm = document.getElementById('newsletter-form');
+        if(newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const feedbackEl = document.getElementById('newsletter-feedback');
+                if(feedbackEl) {
+                    feedbackEl.textContent = 'Thank you for subscribing!';
+                }
+                const emailInput = document.getElementById('newsletter-email');
+                if(emailInput) {
+                    emailInput.value = '';
+                }
+                setTimeout(() => {
+                    if(feedbackEl) {
+                        feedbackEl.textContent = '';
+                    }
+                }, 3000);
+            });
+        }
+        
+        function addExperienceToggleListener() {
+            const toggleBtn = document.getElementById('exp-toggle-btn');
+            if(!toggleBtn) return;
+            const hiddenItems = document.querySelectorAll('.timeline-item-vertical.hidden');
+            
+            toggleBtn.addEventListener('click', () => {
+                const isHidden = toggleBtn.textContent === 'Show More';
+                hiddenItems.forEach(item => {
+                    item.style.display = isHidden ? 'block' : 'none';
+                });
+                toggleBtn.textContent = isHidden ? 'Show Less' : 'Show More';
+            });
+        }
+
+
+        function addSkillFilterListeners() {
+            const filterButtons = document.querySelectorAll('.skill-filter-btn');
+            const skillTags = document.querySelectorAll('.skill-tag');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.dataset.filter;
+
+                    skillTags.forEach(tag => {
+                        tag.style.transform = 'scale(0.8)';
+                        tag.style.opacity = '0';
+                        setTimeout(() => {
+                           if (filter === 'all' || tag.dataset.category === filter) {
+                                tag.style.display = 'inline-block';
+                                setTimeout(() => {
+                                    tag.style.transform = 'scale(1)';
+                                    tag.style.opacity = '1';
+                                }, 50);
+                            } else {
+                                tag.style.display = 'none';
+                            }
+                        }, 200);
+                    });
+                });
+            });
+        }
+        
+        function setupAnimatedCounters() {
+            const counters = [
+                { id: 'years-exp', end: 5, suffix: '+' },
+                { id: 'projects-done', end: 20, suffix: '+' },
+                { id: 'happy-clients', end: 15, suffix: '+' }
+            ];
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counterEl = entry.target;
+                        const data = counters.find(c => c.id === counterEl.id);
+                        if (data && !counterEl.classList.contains('animated')) {
+                            animateValue(counterEl, 0, data.end, 1500, data.suffix);
+                            counterEl.classList.add('animated');
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(c => {
+                const el = document.getElementById(c.id);
+                if (el) observer.observe(el);
+            });
+        }
+
+        function animateValue(obj, start, end, duration, suffix = '') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * end) + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function addAIToolListeners() {
+            const generateLetterBtn = document.getElementById('generate-letter-btn');
+            if (generateLetterBtn) {
+                generateLetterBtn.addEventListener('click', async (e) => {
+                    const jobDesc = document.getElementById('job-description').value.trim();
+                    if (!jobDesc) { alert("Please paste a job description first."); return; }
+                    
+                    const outputContainer = document.getElementById('letter-output-container');
+                    const outputEl = document.getElementById('letter-output');
+                    const prompt = `My resume is: ${fullResumeTextForAI}. The job description is: "${jobDesc}". Based on my resume, write a professional and compelling cover letter for this specific job. Address it to "Hiring Manager". Highlight my most relevant skills and experience. Keep it concise, around 3-4 paragraphs. Sign off as Arifuz Zaman Antor.`;
+                    
+                    outputContainer.classList.remove('hidden');
+                    outputEl.innerHTML = `<div class="flex justify-center items-center h-full p-8"><div class="loader"></div></div>`;
+                    const result = await callGemini(prompt, e.currentTarget);
+                    outputEl.textContent = result;
+                });
+            }
+
+            const copyLetterBtn = document.getElementById('copy-letter-btn');
+            if(copyLetterBtn){
+                copyLetterBtn.addEventListener('click', () => {
+                    const copyBtn = document.getElementById('copy-letter-btn');
+                    navigator.clipboard.writeText(document.getElementById('letter-output').textContent).then(() => {
+                        copyBtn.innerHTML = `<i data-lucide="check" class="mr-2 h-5 w-5"></i> Copied!`;
+                        lucide.createIcons();
+                        setTimeout(() => { copyBtn.innerHTML = `<i data-lucide="copy" class="mr-2 h-5 w-5"></i> Copy`; lucide.createIcons(); }, 2000);
+                    });
+                });
+            }
+            
+            const getInterviewQuestionBtn = document.getElementById('get-interview-question-btn');
+            if(getInterviewQuestionBtn) {
+                getInterviewQuestionBtn.addEventListener('click', async (e) => {
+                    const qnaContainer = document.getElementById('interview-qna-container');
+                    const questionOutput = document.getElementById('interview-question-output');
+                    
+                    qnaContainer.classList.remove('hidden');
+                    document.getElementById('feedback-output-container').classList.add('hidden');
+                    document.getElementById('interview-answer').value = '';
+                    questionOutput.innerHTML = `<div class="loader !w-5 !h-5"></div>`;
+                    
+                    const prompt = `Act as an interviewer for a Senior Software QA Engineer role. Provide one common but insightful interview question. The question could be about test strategy, automation, performance, security, or team collaboration.`;
+                    const result = await callGemini(prompt, e.currentTarget);
+                    questionOutput.textContent = result;
+                });
+            }
+            
+            const getFeedbackBtn = document.getElementById('get-feedback-btn');
+            if(getFeedbackBtn){
+                getFeedbackBtn.addEventListener('click', async (e) => {
+                    const question = document.getElementById('interview-question-output').textContent;
+                    const answer = document.getElementById('interview-answer').value.trim();
+                    if(!answer) { alert('Please provide an answer first.'); return; }
+                    
+                    const feedbackContainer = document.getElementById('feedback-output-container');
+                    const feedbackOutput = document.getElementById('feedback-output');
+                    
+                    feedbackContainer.classList.remove('hidden');
+                    feedbackOutput.innerHTML = `<div class="flex justify-center items-center h-full p-8"><div class="loader"></div></div>`;
+                    
+                    const prompt = `The interview question is: "${question}". The candidate's answer is: "${answer}". Act as a helpful and constructive interviewer. Provide feedback on the candidate's answer. Point out strengths and suggest areas for improvement. Keep the feedback concise and encouraging.`;
+                    const result = await callGemini(prompt, e.currentTarget);
+                    feedbackOutput.textContent = result;
+                });
+            }
+
+            const generateCasesBtn = document.getElementById('generate-cases-btn');
+            if(generateCasesBtn){
+                generateCasesBtn.addEventListener('click', async (e) => {
+                    const featureDesc = document.getElementById('feature-description').value.trim();
+                    if(!featureDesc) { alert('Please describe the feature first.'); return; }
+                    
+                    const outputContainer = document.getElementById('test-case-output-container');
+                    const outputEl = document.getElementById('test-case-output');
+                    
+                    outputContainer.classList.remove('hidden');
+                    outputEl.innerHTML = `<div class="flex justify-center items-center h-full p-8"><div class="loader"></div></div>`;
+                    
+                    const prompt = `I am a Sr. Software QA Engineer. A product manager has described a feature: "${featureDesc}". Based on this description, generate a comprehensive set of test cases. Categorize them into 'Positive Test Cases', 'Negative Test Cases', and 'Edge Cases'. For each case, provide a brief 'Test Case ID', a 'Description', and 'Expected Result'. Format the output clearly using Markdown-style headings and lists.`;
+                    const result = await callGemini(prompt, e.currentTarget);
+                    outputEl.textContent = result;
+                });
+            }
+        }
+
+        // --- Gemini API Call Function ---
+        async function callGemini(prompt, buttonElement) {
+            const btnTextEl = buttonElement.querySelector('.btn-text');
+            const originalBtnText = btnTextEl?.innerHTML;
+            if (buttonElement) {
+                buttonElement.disabled = true;
+                if (btnTextEl) {
+                    btnTextEl.innerHTML = `<div class="loader"></div>`;
+                }
+            }
+            try {
+                const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                if (!response.ok) throw new Error(`API Error: ${response.status}`);
+                const result = await response.json();
+                return result.candidates[0]?.content?.parts[0]?.text || "Sorry, I couldn't generate a response.";
+            } catch (error) {
+                console.error("Gemini API call failed:", error);
+                return "An error occurred while connecting to the AI. Please try again later.";
+            } finally {
+                if (buttonElement && originalBtnText) {
+                    buttonElement.disabled = false;
+                    btnTextEl.innerHTML = originalBtnText;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
